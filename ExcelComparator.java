@@ -33,8 +33,8 @@ public class ExcelComparator {
     }
     public static void main(String args[]) throws Exception 
     {
-    	FileInputStream f1 = new FileInputStream(new File("D:\\excel\\baseline_environment_1_Dev_abkx_20181205193434.xlsx"));
-    	FileInputStream f2 = new FileInputStream(new File("D:\\excel\\baseline_environment_1_Dev_abkx_20181205193435.xlsx"));
+    	FileInputStream f1 = new FileInputStream(new File("path"));
+    	FileInputStream f2 = new FileInputStream(new File("path"));
         
     	XSSFWorkbook wb1 = new XSSFWorkbook(f1);
     	XSSFWorkbook wb2 = new XSSFWorkbook(f2);
@@ -296,7 +296,6 @@ public class ExcelComparator {
 		 int k[] = new int[n];
 		 for(int i = 0 ; i<n ; i++)
 		 {
-	    System.out.println("Enter the  Column to compare:");
 	    String s = sc.next();
 	    CellReference cellReference = new CellReference(s);
 	    Cell cell = loc1.sheet.getRow(0).getCell(cellReference.convertColStringToIndex(s));
@@ -323,11 +322,10 @@ public class ExcelComparator {
     	FileOutputStream out;
     	try 
     	{
-    		out = new FileOutputStream(new File("D:\\excel\\Writesheet.xlsx"));
+    		out = new FileOutputStream(new File("path"));
     		workbook.write(out);
 		    out.close();
 		    workbook.close();
-		    System.out.println("Writesheet.xlsx written successfully");
     	} 
     	catch (Exception e) 
     	{
